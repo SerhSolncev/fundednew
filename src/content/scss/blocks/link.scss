@@ -1,0 +1,23 @@
+.link {
+	display: flex;
+	transition: color 0.3s linear, border-color 0.3s linear;
+
+	$this: &;
+
+	&--simple-white {
+		font-size: rem(18);
+		line-height: 1;
+		color: $color-white;
+		font-family: $secondFont;
+		border-bottom: 1px solid transparent;
+
+		@media(min-width: 1366px) {
+			font-size: rem(22);
+		}
+
+		&:hover {
+			color: #ededed;
+			border-color: #ededed;
+		}
+	}
+}

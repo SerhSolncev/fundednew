@@ -1,0 +1,405 @@
+.title {
+	margin: 0;
+
+	&--section {
+		font-family: $secondFont;
+		font-size: rem(36);
+		font-weight: bold;
+		color: $color-white;
+
+		.light & {
+			color: $color-dark;
+		}
+
+		@media(min-width: 640px) {
+			font-size: rem(48);
+		}
+
+		@media(min-width: 1024px) {
+			font-size: rem(48);
+		}
+
+		@media(min-width: 1024px) and (max-width: 1279px) {
+			.top-block & {
+				font-size: rem(36);
+			}
+		}
+
+		@media(min-width: 1280px) {
+			font-size: rem(50);
+		}
+
+		@media(min-width: 1440px) {
+			font-size: rem(64);
+		}
+	}
+
+	&--section-bigger {
+		font-family: $secondFont;
+		font-size: rem(36);
+		font-weight: bold;
+		color: $color-white;
+
+		.light & {
+			color: $color-dark;
+		}
+
+		@media(min-width: 640px) {
+			font-size: rem(48);
+		}
+
+		@media(min-width: 1024px) {
+			font-size: rem(80);
+		}
+
+		@media(min-width: 1280px) {
+			font-size: rem(100);
+		}
+
+		@media(min-width: 1440px) {
+			font-size: rem(120);
+		}
+	}
+
+	&--section-small {
+		font-family: $secondFont;
+		font-size: rem(36);
+		font-weight: bold;
+		color: $color-white;
+
+		.light & {
+			color: $color-dark;
+		}
+
+		@media(min-width: 1024px) {
+			font-size: rem(40);
+		}
+	}
+
+	&--large {
+		font-family: $secondFont;
+		font-size: rem(40);
+		font-weight: bold;
+		color: $color-white;
+		line-height: 1.3;
+
+		@media(min-width: 768px) {
+			font-size: rem(60);
+		}
+
+		@media(min-width: 1365px) {
+			font-size: rem(80);
+		}
+
+		@media(min-width: 1440px) {
+			font-size: rem(98);
+		}
+	}
+
+	&--large-min {
+		font-family: $secondFont;
+		font-size: rem(40);
+		font-weight: bold;
+		color: $color-white;
+		line-height: 1.3;
+
+		@media(min-width: 768px) {
+			font-size: rem(60);
+		}
+
+		@media(min-width: 1365px) {
+			font-size: rem(80);
+		}
+
+		@media(min-width: 1440px) {
+			font-size: rem(90);
+		}
+	}
+
+	&--section-big {
+		font-family: $secondFont;
+		font-size: rem(31);
+		font-weight: bold;
+		color: $color-white;
+
+		@media(min-width: 768px) {
+			font-size: rem(42);
+		}
+
+		@media(min-width: 1366px) {
+			font-size: rem(55);
+		}
+	}
+
+	&--medium {
+		font-family: $secondFont;
+		font-size: rem(28);
+		font-weight: bold;
+	}
+
+	&--medium-two {
+		font-family: $secondFont;
+		font-size: rem(30);
+		font-weight: bold;
+	}
+
+	&--medium-three {
+		font-family: $secondFont;
+		font-size: rem(32);
+		font-weight: bold;
+	}
+
+	&--second-med {
+		font-family: $secondFont;
+		font-size: rem(20);
+		font-weight: 500;
+
+		@media(min-width: 768px) {
+			font-size: rem(24);
+		}
+
+		@media(min-width: 1366px) {
+			font-size: rem(33);
+		}
+	}
+
+	&--second-sec {
+		font-family: $secondFont;
+		font-size: rem(24);
+		font-weight: 500;
+
+		@media(min-width: 1366px) {
+			font-size: rem(37);
+		}
+	}
+
+	&--small {
+		font-size: rem(18);
+		font-weight: 500;
+		letter-spacing: 0.1em;
+
+		@media(min-width: 1024px) {
+			font-size: rem(22);
+		}
+	}
+
+	&--mini {
+		font-size: rem(15);
+		font-weight: 300;
+
+		@media(min-width: 1366px) {
+			font-size: rem(18);
+		}
+
+		span {
+			font-weight: bold;
+		}
+	}
+
+	&--mini-second {
+		font-size: rem(14);
+		font-weight: 300;
+
+		span {
+			font-weight: bold;
+		}
+	}
+
+	&--super-mini {
+		font-size: rem(12);
+		font-weight: 300;
+
+		span {
+			font-weight: bold;
+		}
+	}
+
+	&--white {
+		color: $color-white;
+
+		.light & {
+			color: $color-dark;
+		}
+
+		.footer & {
+			color: $color-white;
+		}
+	}
+
+	&--ttu {
+		text-transform: uppercase;
+	}
+
+	&--regular {
+		font-weight: 500;
+	}
+
+	&--border-mini {
+		position: relative;
+		border-radius: rem(10);
+		font-size: rem(16);
+		font-weight: 400;
+		color: $color-white;
+		padding: rem(10) rem(22);
+
+		@media(min-width: 1024px) {
+			padding: rem(14) rem(23);
+			border-radius: rem(15);
+			font-size: rem(26);
+		}
+
+		.light & {
+			color: $color-dark;
+		}
+
+		span {
+			display: block;
+			padding: rem(5) 0 0;
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			z-index: 3;
+			border-radius: inherit;
+			border: rem(2) solid transparent;
+			background: linear-gradient(125deg,#1AA72A,#69D645) border-box;
+			-webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+			-webkit-mask-composite: destination-out;
+			mask-composite: exclude;
+		}
+	}
+}
+
+.simple-text {
+
+	p {
+		margin: 0;
+	}
+
+	&--white {
+		color: $color-white;
+
+		.light & {
+			color: $color-dark;
+		}
+
+		.footer & {
+			color: $color-white;
+		}
+	}
+
+	&--gray {
+		color: #c8c8c8;
+	}
+
+	&--gray-two {
+		color: #677381;
+	}
+
+	&--gray-three {
+		color: #ededed;
+	}
+
+	&--default {
+		font-size: rem(14);
+		line-height: 1.4;
+		font-weight: 300;
+
+		@media(min-width: 768px) {
+			font-size: rem(16);
+		}
+	}
+
+	&--medium {
+		font-size: rem(14);
+		line-height: 1.4;
+		font-weight: 300;
+
+		@media(min-width: 768px) {
+			font-size: rem(18);
+		}
+	}
+
+	&--medium-two {
+		font-size: rem(14);
+		line-height: 1.45;
+		font-weight: 300;
+
+		@media(min-width: 768px) {
+			font-size: rem(17);
+		}
+	}
+
+	&--medium-three {
+		font-size: rem(18);
+		line-height: 1.2;
+		font-weight: 300;
+
+		@media(min-width: 768px) {
+			font-size: rem(21);
+		}
+	}
+
+	&--bigger-two {
+		font-size: rem(16);
+		line-height: 1.5;
+		font-weight: 300;
+
+		@media(min-width: 1200px) {
+			font-size: rem(18);
+		}
+
+		@media(min-width: 1440px) {
+			font-size: rem(20);
+		}
+	}
+
+	&--bigger {
+		font-size: rem(14);
+		line-height: 1.55;
+		font-weight: 300;
+
+		@media(min-width: 1200px) {
+			font-size: rem(18);
+		}
+
+		@media(min-width: 1440px) {
+			font-size: rem(22);
+		}
+	}
+
+	&--large {
+		font-size: rem(16);
+		line-height: 1.55;
+		font-weight: 300;
+
+		@media(min-width: 1200px) {
+			font-size: rem(18);
+		}
+
+		@media(min-width: 1440px) {
+			font-size: rem(24);
+		}
+	}
+
+	&--bold {
+		font-weight: 500;
+	}
+
+	&.default-gradient {
+		transition: color 0.2s linear;
+	}
+}
+
+
+.default-gradient {
+	background-image: -webkit-linear-gradient(0deg, #1AA72A, #69D645);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	transition: color 0.2s linear;
+}

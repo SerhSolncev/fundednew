@@ -1,0 +1,744 @@
+extends ../layout/base
+
+block variables
+
+    - var title='';
+    - var description='';
+    - var pageClass='step-two';
+
+block content
+    section.section.section--inner-top
+        .container.container--inner-top
+            .inner-top
+                .inner-top__left
+                    .title.title--section-small.title--white Evaluation
+                    .title.title--large.title--white.default-gradient Two Step
+                    .simple-text.simple-text--medium-two.simple-text--white
+                        | Your goal in this model will be to prove your trading ability in 2 phases with very realistic profit targets.
+                    a.button.button--medium.button--gradient-bg.button--shadow
+                        .button__text Start Plan
+                .inner-top__pic
+                    img(src='content/images/empty.gif' class="lazy" data-src="content/images/pics/notebook.png" width="856" height="500" alt="notebook")
+                    img(src='content/images/empty.gif' class="lazy" data-src="content/images/pics/notebook-light.png" width="856" height="500" alt="notebook")
+    section.section.section--broker.js-inview
+        .container.container--small
+            .broker-block
+                .broker-block__top
+                    h2.title.title--section
+                        | Evaluation
+                        span.default-gradient  Rules
+                .broker-block__list
+                    .broker-item
+                        .broker-item__body
+                            .title.title--medium.title--white
+                                | 5% Daily
+                                span.default-gradient Dropdown
+                            .simple-text.simple-text--default.simple-text--white
+                                | If your initial account balance is $100,000, then 5% of the amount is $5000.
+                    .broker-item
+                        .broker-item__body
+                            .title.title--medium.title--white
+                                | 10% Overall
+                                span.default-gradient Drawdown
+                            .simple-text.simple-text--default.simple-text--white
+                                | Traders are allowed a maximum of 10% loss from the initial balance they start with.
+                    .broker-item
+                        .broker-item__body
+                            .title.title--medium.title--white
+                                | Profit Target
+                                span.default-gradient (5% to 10%)
+                            .simple-text.simple-text--default.simple-text--white
+                                | Our evaluation model has two assessment phases. In phase-01, you need to hit a 10% profit target within 4 trading weeks without violating any rules.
+                    .broker-item
+                        .broker-item__body
+                            .title.title--medium.title--white
+                                | Bi-Weekly
+                                span.default-gradient Payout
+                            .simple-text.simple-text--default.simple-text--white
+                                | In your FundedNext Account, you will be eligible to withdraw your first profit after 4 trading weeks and from second payout onwards.
+                .broker-block__bottom
+                    a.button.button--medium.button--gradient-bg.button--shadow
+                        .button__text Read all rules
+    section.section.section--with.js-inview
+        .container.container--secondary
+            .with-block
+                .with-block__top
+                    h2.title.title--section
+                        | Evaluation
+                        span.default-gradient  Benefits
+                .with-block__list.js-acc-wrap
+                    -
+                        var withList = [
+                            {
+                                icon: 'content/images/icons/with1.svg',
+                                title: 'Trade with up to $200K FundedNext Challenge',
+                                text: 'We win when you win. To increase your chances of profitability, we are offering you up to $200,000 funds in our Evaluation model.'
+                            }, {
+                                icon: 'content/images/icons/with1.svg',
+                                title: '15% Profit Share from the FundedNext Challenge Phase',
+                                text: 'In the Evaluation model, you can get 15% profit during each assessment phase. So you can start earning a profit share as a reward even when you’re trading the FundedNext Challenge account.'
+                            }, {
+                                icon: 'content/images/icons/with1.svg',
+                                title: '14 Days Extension',
+                                text: 'If you are in profit but can not meet your phase-01 target, no worries. As long as you are profitable by following all rules, you will be given an additional 14 days to complete your challenge.'
+                            }, {
+                                icon: 'content/images/icons/with1.svg',
+                                title: 'Unlimited Free Retake',
+                                text: 'Don’t worry if you are in profit but cannot achieve your target within a trading cycle while following the rules. We will provide you with unlimited retakes without any additional charge. All you have to do is to be profitable without violating any rules.'
+                            }, {
+                                icon: 'content/images/icons/with1.svg',
+                                title: 'Up to 90% Profit Sharing',
+                                text: 'After getting the FundedNext Account, you start with an 80% profit split to begin with. And when you become eligible for the scale-up plan, your profit share will increase to 90%.'
+                            }, {
+                                icon: 'content/images/icons/with1.svg',
+                                title: 'Weekend holding',
+                                text: 'You don\'t have to miss any big market movement. Hold your trade as long as you want, even during the weekends. Whatever your trading style is (Scalp, Intraday, or Swing trading), this is perfect option for you.'
+                            }
+                        ]
+                    each withListItem in withList
+                        .with-item.js-acc
+                            .with-item__body
+                                .with-item__top.js-open-acc
+                                    .with-item__icon
+                                        img(src='content/images/empty.gif' class="lazy" data-src=withListItem.icon width="" height="" alt=withListItem.icon)
+                                    .title.title--white.title--second-med #{withListItem.title}
+                                    .with-item__arrow
+                                        img(src='content/images/empty.gif' class="lazy" data-src="content/images/icons/arrow.svg" width="" height="" alt="arrow.svg")
+                                .with-item__body-text.js-acc-block
+                                    .simple-text.simple-text--bigger.simple-text--gray #{withListItem.text}
+    section.section.section--best-plan.js-inview
+        .container
+            .best-plan
+                .best-plan__top
+                    h2.title.title--section
+                        | Choose the Best
+                        span.default-gradient  FundedForex
+                        |   Plan
+                .best-plan__body.js-tabs-wrapper
+                    .best-plan__tabs-buttons
+                        button.tab-button.js-tabs-button(data-id="tab1")
+                            .tab-button__text One Step
+                        button.tab-button.js-tabs-button(data-id="tab2").is-active
+                            .tab-button__text Two Step
+                    .best-plan__tab-block.js-tabs-block(data-id="tab1")
+                        .best-plan__slider-wrap
+                            .best-plan__left
+                                .title.title--medium-three.default-gradient Account Size
+                                .simple-text.simple-text--white.simple-text--medium Profit share from plan
+                                .simple-text.simple-text--white.simple-text--medium Profit Target
+                                .simple-text.simple-text--white.simple-text--medium Maximum Daily Loss
+                                .simple-text.simple-text--white.simple-text--medium Maximum Overall Loss
+                                .simple-text.simple-text--white.simple-text--medium Drawdown Type
+                                .simple-text.simple-text--white.simple-text--medium Time Limit
+                                .simple-text.simple-text--white.simple-text--medium Minimum Trading Days
+                                .simple-text.simple-text--white.simple-text--medium Commissions
+                                .simple-text.simple-text--white.simple-text--medium Profit Split Upto
+                                .simple-text.simple-text--white.simple-text--medium Trading Leverage
+                                .simple-text.simple-text--white.simple-text--medium Reset Discount
+                                .simple-text.simple-text--white.simple-text--medium Refundable Fee
+                                .simple-text.simple-text--white.simple-text--medium Choose your desired Plan
+                            .best-plan__slider(data-slider="plan-slider")
+                                .best-plan__slider-nav
+                                    button.swiper-btn.js-prev
+                                        svg(width='10', height='17', viewBox='0 0 10 17', xmlns='http://www.w3.org/2000/svg')
+                                            path(d='M9.55844 16.4849C9.34411 16.6994 9.05345 16.8198 8.75039 16.8198C8.44733 16.8198 8.15668 16.6994 7.94235 16.4849L1.08484 9.62164C0.870575 9.40713 0.750209 9.11623 0.750209 8.81292C0.750209 8.5096 0.870575 8.21871 1.08484 8.0042L7.94235 1.14092C8.15791 0.932558 8.44661 0.817261 8.74628 0.819867C9.04595 0.822473 9.33261 0.942774 9.54451 1.15486C9.75642 1.36694 9.87662 1.65384 9.87922 1.95376C9.88183 2.25369 9.76663 2.54263 9.55844 2.75837L3.50897 8.81292L9.55844 14.8675C9.7727 15.082 9.89307 15.3729 9.89307 15.6762C9.89307 15.9795 9.7727 16.2704 9.55844 16.4849Z')
+                                    button.swiper-btn.js-next
+                                        svg(width='10', height='17', viewBox='0 0 10 17', xmlns='http://www.w3.org/2000/svg')
+                                            path(d='M0.441565 1.14009C0.655894 0.925644 0.946547 0.805176 1.24961 0.805176C1.55267 0.805176 1.84332 0.925644 2.05765 1.14009L8.91516 8.00336C9.12943 8.21787 9.24979 8.50877 9.24979 8.81208C9.24979 9.1154 9.12943 9.40629 8.91516 9.6208L2.05765 16.4841C1.84209 16.6924 1.55339 16.8077 1.25372 16.8051C0.954052 16.8025 0.667393 16.6822 0.455487 16.4701C0.243581 16.2581 0.123381 15.9712 0.120777 15.6712C0.118173 15.3713 0.233373 15.0824 0.441565 14.8666L6.49103 8.81208L0.441565 2.75753C0.227301 2.54302 0.106934 2.25213 0.106934 1.94881C0.106934 1.64549 0.227301 1.3546 0.441565 1.14009Z')
+                                .swiper-container
+                                    .swiper-wrapper
+                                        .swiper-slide
+                                            .plan-item
+                                                .title.title--medium-two.default-gradient $6,000
+                                                .plan-item__body
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Profit share from plan
+                                                        | 15%($90)
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Profit Target
+                                                        | 10%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Maximum Daily Loss
+                                                        | 3%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Maximum Overall Loss
+                                                        | 6%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Drawdown Type
+                                                        | Balance Based
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Time Limit
+                                                        | No Time Limit
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Minimum Trading Days
+                                                        | 5
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Commissions
+                                                        | 3$/Per Lot
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Profit Split Upto
+                                                        | 90%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Trading Leverage
+                                                        | 1:30
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Profit Target
+                                                        | 10%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Refundable Fee
+                                                        | $65
+                                                    a(href='#').button.button--mini
+                                                        .button__text Start Plan
+                                        .swiper-slide
+                                            .plan-item
+                                                .title.title--medium-two.default-gradient $15,000
+                                                .button.button--middle.button--gradient-bg
+                                                    .button__text For Beginners
+                                                .plan-item__body
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Profit share from plan
+                                                        | 15%($225)
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Profit Target
+                                                        | 10%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Maximum Daily Loss
+                                                        | 3%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Maximum Overall Loss
+                                                        | 6%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Drawdown Type
+                                                        | Balance Based
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Time Limit
+                                                        | No Time Limit
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Minimum Trading Days
+                                                        | 5
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Commissions
+                                                        | 3$/Per Lot
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Profit Split Upto
+                                                        | 90%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Trading Leverage
+                                                        | 1:30
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Profit Target
+                                                        | 10%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Refundable Fee
+                                                        | $65
+                                                    a(href='#').button.button--mini
+                                                        .button__text Start Plan
+                                        .swiper-slide
+                                            .plan-item
+                                                .title.title--medium-two.default-gradient $25,000
+                                                .plan-item__body
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Profit share from plan
+                                                        | 15%($375)
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Profit Target
+                                                        | 10%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Maximum Daily Loss
+                                                        | 3%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Maximum Overall Loss
+                                                        | 6%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Drawdown Type
+                                                        | Balance Based
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Time Limit
+                                                        | No Time Limit
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Minimum Trading Days
+                                                        | 5
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Commissions
+                                                        | 3$/Per Lot
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Profit Split Upto
+                                                        | 90%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Trading Leverage
+                                                        | 1:30
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Profit Target
+                                                        | 10%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Refundable Fee
+                                                        | $65
+                                                    a(href='#').button.button--mini
+                                                        .button__text Start Plan
+                                        .swiper-slide
+                                            .plan-item
+                                                .title.title--medium-two.default-gradient $50,000
+                                                .button.button--middle.button--gradient-bg
+                                                    .button__text Recommended
+                                                .plan-item__body
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Profit share from plan
+                                                        | 15%($750)
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Profit Target
+                                                        | 10%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Maximum Daily Loss
+                                                        | 3%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Maximum Overall Loss
+                                                        | 6%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Drawdown Type
+                                                        | Balance Based
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Time Limit
+                                                        | No Time Limit
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Minimum Trading Days
+                                                        | 5
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Commissions
+                                                        | 3$/Per Lot
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Profit Split Upto
+                                                        | 90%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Trading Leverage
+                                                        | 1:30
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Profit Target
+                                                        | 10%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Refundable Fee
+                                                        | $65
+                                                    a(href='#').button.button--mini
+                                                        .button__text Start Plan
+                                        .swiper-slide
+                                            .plan-item
+                                                .title.title--medium-two.default-gradient $100,000
+                                                .plan-item__body
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Profit share from plan
+                                                        | 15%($1,500)
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Profit Target
+                                                        | 10%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Maximum Daily Loss
+                                                        | 3%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Maximum Overall Loss
+                                                        | 6%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Drawdown Type
+                                                        | Balance Based
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Time Limit
+                                                        | No Time Limit
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Minimum Trading Days
+                                                        | 5
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Commissions
+                                                        | 3$/Per Lot
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Profit Split Upto
+                                                        | 90%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Trading Leverage
+                                                        | 1:30
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Profit Target
+                                                        | 10%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Refundable Fee
+                                                        | $65
+                                                    a(href='#').button.button--mini
+                                                        .button__text Start Plan
+                                        .swiper-slide
+                                            .plan-item
+                                                .title.title--medium-two.default-gradient $200,000
+                                                .button.button--middle.button--gradient-bg
+                                                    .button__text For Experts
+                                                .plan-item__body
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Profit share from plan
+                                                        | 15%($3,000)
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Profit Target
+                                                        | 10%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Maximum Daily Loss
+                                                        | 3%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Maximum Overall Loss
+                                                        | 6%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Drawdown Type
+                                                        | Balance Based
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Time Limit
+                                                        | No Time Limit
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Minimum Trading Days
+                                                        | 5
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Commissions
+                                                        | 3$/Per Lot
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Profit Split Upto
+                                                        | 90%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Trading Leverage
+                                                        | 1:30
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Profit Target
+                                                        | 10%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Refundable Fee
+                                                        | $65
+                                                    a(href='#').button.button--mini
+                                                        .button__text Start Plan
+                    .best-plan__tab-block.js-tabs-block(data-id="tab2").is-active
+                        .best-plan__slider-wrap
+                            .best-plan__left
+                                .title.title--medium-three.default-gradient Account Size
+                                .simple-text.simple-text--white.simple-text--medium Profit share from plan
+                                .simple-text.simple-text--white.simple-text--medium Profit Target
+                                .simple-text.simple-text--white.simple-text--medium Maximum Daily Loss
+                                .simple-text.simple-text--white.simple-text--medium Maximum Overall Loss
+                                .simple-text.simple-text--white.simple-text--medium Drawdown Type
+                                .simple-text.simple-text--white.simple-text--medium Time Limit
+                                .simple-text.simple-text--white.simple-text--medium Minimum Trading Days
+                                .simple-text.simple-text--white.simple-text--medium Commissions
+                                .simple-text.simple-text--white.simple-text--medium Profit Split Upto
+                                .simple-text.simple-text--white.simple-text--medium Trading Leverage
+                                .simple-text.simple-text--white.simple-text--medium Choose your desired Plan
+                            .best-plan__slider(data-slider="plan-slider")
+                                .best-plan__slider-nav
+                                    button.swiper-btn.js-prev
+                                        svg(width='10', height='17', viewBox='0 0 10 17', xmlns='http://www.w3.org/2000/svg')
+                                            path(d='M9.55844 16.4849C9.34411 16.6994 9.05345 16.8198 8.75039 16.8198C8.44733 16.8198 8.15668 16.6994 7.94235 16.4849L1.08484 9.62164C0.870575 9.40713 0.750209 9.11623 0.750209 8.81292C0.750209 8.5096 0.870575 8.21871 1.08484 8.0042L7.94235 1.14092C8.15791 0.932558 8.44661 0.817261 8.74628 0.819867C9.04595 0.822473 9.33261 0.942774 9.54451 1.15486C9.75642 1.36694 9.87662 1.65384 9.87922 1.95376C9.88183 2.25369 9.76663 2.54263 9.55844 2.75837L3.50897 8.81292L9.55844 14.8675C9.7727 15.082 9.89307 15.3729 9.89307 15.6762C9.89307 15.9795 9.7727 16.2704 9.55844 16.4849Z')
+                                    button.swiper-btn.js-next
+                                        svg(width='10', height='17', viewBox='0 0 10 17', xmlns='http://www.w3.org/2000/svg')
+                                            path(d='M0.441565 1.14009C0.655894 0.925644 0.946547 0.805176 1.24961 0.805176C1.55267 0.805176 1.84332 0.925644 2.05765 1.14009L8.91516 8.00336C9.12943 8.21787 9.24979 8.50877 9.24979 8.81208C9.24979 9.1154 9.12943 9.40629 8.91516 9.6208L2.05765 16.4841C1.84209 16.6924 1.55339 16.8077 1.25372 16.8051C0.954052 16.8025 0.667393 16.6822 0.455487 16.4701C0.243581 16.2581 0.123381 15.9712 0.120777 15.6712C0.118173 15.3713 0.233373 15.0824 0.441565 14.8666L6.49103 8.81208L0.441565 2.75753C0.227301 2.54302 0.106934 2.25213 0.106934 1.94881C0.106934 1.64549 0.227301 1.3546 0.441565 1.14009Z')
+                                .swiper-container
+                                    .swiper-wrapper
+                                        .swiper-slide
+                                            .plan-item
+                                                .title.title--medium-two.default-gradient $11,000
+                                                .button.button--middle.button--gradient-bg
+                                                    .button__text For Beginners
+                                                .plan-item__body
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Profit share from plan
+                                                        | 15%($90)
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Profit Target
+                                                        | 10%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Maximum Daily Loss
+                                                        | 3%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Maximum Overall Loss
+                                                        | 6%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Drawdown Type
+                                                        | Balance Based
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Time Limit
+                                                        | No Time Limit
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Minimum Trading Days
+                                                        | 5
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Commissions
+                                                        | 3$/Per Lot
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Profit Split Upto
+                                                        | 90%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Trading Leverage
+                                                        | 1:30
+                                                    a(href='#').button.button--mini
+                                                        .button__text Start Plan
+                                        .swiper-slide
+                                            .plan-item
+                                                .title.title--medium-two.default-gradient $15,000
+                                                .plan-item__body
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Profit share from plan
+                                                        | 15%($225)
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Profit Target
+                                                        | 10%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Maximum Daily Loss
+                                                        | 3%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Maximum Overall Loss
+                                                        | 6%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Drawdown Type
+                                                        | Balance Based
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Time Limit
+                                                        | No Time Limit
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Minimum Trading Days
+                                                        | 5
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Commissions
+                                                        | 3$/Per Lot
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Profit Split Upto
+                                                        | 90%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Trading Leverage
+                                                        | 1:30
+                                                    a(href='#').button.button--mini
+                                                        .button__text Start Plan
+                                        .swiper-slide
+                                            .plan-item
+                                                .title.title--medium-two.default-gradient $25,000
+                                                .plan-item__body
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Profit share from plan
+                                                        | 15%($375)
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Profit Target
+                                                        | 10%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Maximum Daily Loss
+                                                        | 3%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Maximum Overall Loss
+                                                        | 6%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Drawdown Type
+                                                        | Balance Based
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Time Limit
+                                                        | No Time Limit
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Minimum Trading Days
+                                                        | 5
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Commissions
+                                                        | 3$/Per Lot
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Profit Split Upto
+                                                        | 90%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Trading Leverage
+                                                        | 1:30
+                                                    a(href='#').button.button--mini
+                                                        .button__text Start Plan
+                                        .swiper-slide
+                                            .plan-item
+                                                .title.title--medium-two.default-gradient $50,000
+                                                .plan-item__body
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Profit share from plan
+                                                        | 15%($750)
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Profit Target
+                                                        | 10%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Maximum Daily Loss
+                                                        | 3%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Maximum Overall Loss
+                                                        | 6%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Drawdown Type
+                                                        | Balance Based
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Time Limit
+                                                        | No Time Limit
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Minimum Trading Days
+                                                        | 5
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Commissions
+                                                        | 3$/Per Lot
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Profit Split Upto
+                                                        | 90%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Trading Leverage
+                                                        | 1:30
+                                                    a(href='#').button.button--mini
+                                                        .button__text Start Plan
+                                        .swiper-slide
+                                            .plan-item
+                                                .title.title--medium-two.default-gradient $100,000
+                                                .button.button--middle.button--gradient-bg
+                                                    .button__text Recommended
+                                                .plan-item__body
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Profit share from plan
+                                                        | 15%($1,500)
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Profit Target
+                                                        | 10%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Maximum Daily Loss
+                                                        | 3%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Maximum Overall Loss
+                                                        | 6%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Drawdown Type
+                                                        | Balance Based
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Time Limit
+                                                        | No Time Limit
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Minimum Trading Days
+                                                        | 5
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Commissions
+                                                        | 3$/Per Lot
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Profit Split Upto
+                                                        | 90%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Trading Leverage
+                                                        | 1:30
+                                                    a(href='#').button.button--mini
+                                                        .button__text Start Plan
+                                        .swiper-slide
+                                            .plan-item
+                                                .title.title--medium-two.default-gradient $200,000
+                                                .button.button--middle.button--gradient-bg
+                                                    .button__text For Experts
+                                                .plan-item__body
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Profit share from plan
+                                                        | 15%($3,000)
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Profit Target
+                                                        | 10%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Maximum Daily Loss
+                                                        | 3%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Maximum Overall Loss
+                                                        | 6%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Drawdown Type
+                                                        | Balance Based
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Time Limit
+                                                        | No Time Limit
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Minimum Trading Days
+                                                        | 5
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Commissions
+                                                        | 3$/Per Lot
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Profit Split Upto
+                                                        | 90%
+                                                    .simple-text.simple-text--white.simple-text--medium
+                                                        span Trading Leverage
+                                                        | 1:30
+                                                    a(href='#').button.button--mini
+                                                        .button__text Start Plan
+    section.section.section--faq.js-inview
+        .container.container--middle
+            .faq-block
+                .faq-block__top
+                    h2.title.title--section
+                        | Frequently Asked
+                        span.default-gradient  Questions
+                    .simple-text.simple-text--white.simple-text--medium
+                        | Check out our most frequently asked questions here or click the link before to see all of our frequently asked questions.
+                .faq-block__list.js-acc-wrap
+                    -
+                        var faq = [
+                            {
+                                name: 'Why do you charge a fee?',
+                                text: 'Why do you charge a fee? The fee mainly serves as a trader’s commitment to treat the account with the utmost care and responsibility. A trader has something in the game and the psychology is working.'
+                            }, {
+                                name: 'I have paid for a FOrexFunded plan, when will I receive my account details?',
+                                text: 'Why do you charge a fee? The fee mainly serves as a trader’s commitment to treat the account with the utmost care and responsibility. A trader has something in the game and the psychology is working.'
+                            }, {
+                                name: 'Do you charge any other fees other than the initial assessment cost?',
+                                text: 'Why do you charge a fee? The fee mainly serves as a trader’s commitment to treat the account with the utmost care and responsibility. A trader has something in the game and the psychology is working.Why do you charge a fee? The fee mainly serves as a trader’s commitment to treat the account with the utmost care and responsibility. A trader has something in the game and the psychology is working.'
+                            }, {
+                                name: 'What is the leverage?',
+                                text: 'Why do you charge a fee? The fee mainly serves as a trader’s commitment to treat the account with the utmost care and responsibility. A trader has something in the game and the psychology is working.'
+                            }, {
+                                name: 'What is ForexFunded ?',
+                                text: 'Why do you charge a fee? The fee mainly serves as a trader’s commitment to treat the account with the utmost care and responsibility. A trader has something in the game and the psychology is working.'
+                            }
+                        ]
+                    each faqItem in faq
+                        .faq-item.js-acc
+                            .faq-item__wrap
+                                .faq-item__top.js-open-acc
+                                    .title.title--medium-three.default-gradient #{faqItem.name}
+                                    .faq-item__icon
+                                        svg(width='25', height='24', viewBox='0 0 25 24', fill='none', xmlns='http://www.w3.org/2000/svg')
+                                            path(fill-rule='evenodd', clip-rule='evenodd', d='M3.25 12C3.25 11.4477 3.69772 11 4.25 11H20.75C21.3023 11 21.75 11.4477 21.75 12C21.75 12.5523 21.3023 13 20.75 13H4.25C3.69772 13 3.25 12.5523 3.25 12Z', fill='url(#paint0_linear_52_1388)')
+                                            path(fill-rule='evenodd', clip-rule='evenodd', d='M12.5 2.75C13.0523 2.75 13.5 3.19772 13.5 3.75V20.25C13.5 20.8023 13.0523 21.25 12.5 21.25C11.9477 21.25 11.5 20.8023 11.5 20.25V3.75C11.5 3.19772 11.9477 2.75 12.5 2.75Z', fill='url(#paint1_linear_52_1388)')
+                                            defs
+                                                lineargradient#paint0_linear_52_1388(x1='3.25', y1='11.5935', x2='21.7645', y2='12.2451', gradientUnits='userSpaceOnUse')
+                                                    stop(stop-color='#1AA72A')
+                                                    stop(offset='1', stop-color='#69D645')
+                                                lineargradient#paint1_linear_52_1388(x1='11.5', y1='8.23975', x2='13.504', y2='8.24057', gradientUnits='userSpaceOnUse')
+                                                    stop(stop-color='#1AA72A')
+                                                    stop(offset='1', stop-color='#69D645')
+                                .faq-item__body.js-acc-block
+                                    .simple-text.simple-text--white.simple-text--medium #{faqItem.text}
+    section.section.section--join.js-inview
+        .container.container--third
+            .join-block
+                .join-block__body
+                    .join-block__title
+                        | Get in touch with the
+                        span.default-gradient  best and brightest
+                        |  traders brought together on our platform
+                    a.button.button--big.button--gradient-bg
+                        .button__text Join Our Community
+                        .button__icon
+                            img(src='content/images/empty.gif' class="lazy" data-src="content/images/icons/disk2.svg" width="44" height="34" alt="disk2")
+                .join-block__pic
+                    svg(width='867', height='781', viewBox='0 0 867 781', fill='none', xmlns='http://www.w3.org/2000/svg')
+                        path(d='M748.824 281.049C715.378 243.261 676.701 209.533 633.325 181.022C623.055 188.858 610.262 199.842 600.795 208.89C554.195 179.711 504.803 158.181 452.623 144.302C452.81 131.209 451.994 114.292 450.695 101.414C400.232 89.0209 349.125 83.673 298.652 84.9425C158.656 175.116 81.7108 289.018 39.9374 416.16C77.9039 482.267 121.264 531.271 167.516 571.134C188.588 558.834 208.728 544.773 227.688 528.968C211.55 513.25 196.971 496.185 184.043 478.114C190.17 476.72 196.263 475.129 202.247 473.366C287.276 569.408 403.133 619.91 530.093 616.274C532.928 621.881 535.909 627.427 539.007 632.842C516.897 635.7 494.417 636.614 471.919 635.488C473.27 660.087 476.605 684.44 481.986 708.273C542.723 715.047 608.186 713.48 682.481 696.245C757.658 560.518 774.725 421.867 748.824 281.049ZM286.301 434.161C254.291 420.207 240.984 379.072 256.747 342.91C272.511 306.747 311.167 288.199 343.737 302.397C376.307 316.594 389.614 357.73 373.267 393.702C357.555 429.884 318.871 448.358 286.301 434.161ZM501.603 528.011C469.594 514.058 456.287 472.922 472.049 436.761C487.813 400.597 526.469 382.05 559.039 396.247C591.611 410.445 604.916 451.58 588.572 487.553C572.809 523.714 534.175 542.209 501.603 528.011Z', fill='url(#paint0_radial_1_5)', fill-opacity='0.3')
+                        path(d='M748.824 281.049C715.378 243.261 676.701 209.533 633.325 181.022C623.055 188.858 610.262 199.842 600.795 208.89C554.195 179.711 504.803 158.181 452.623 144.302C452.81 131.209 451.994 114.292 450.695 101.414C400.232 89.0209 349.125 83.673 298.652 84.9425C158.656 175.116 81.7108 289.018 39.9374 416.16C77.9039 482.267 121.264 531.271 167.516 571.134C188.588 558.834 208.728 544.773 227.688 528.968C211.55 513.25 196.971 496.185 184.043 478.114C190.17 476.72 196.263 475.129 202.247 473.366C287.276 569.408 403.133 619.91 530.093 616.274C532.928 621.881 535.909 627.427 539.007 632.842C516.897 635.7 494.417 636.614 471.919 635.488C473.27 660.087 476.605 684.44 481.986 708.273C542.723 715.047 608.186 713.48 682.481 696.245C757.658 560.518 774.725 421.867 748.824 281.049ZM286.301 434.161C254.291 420.207 240.984 379.072 256.747 342.91C272.511 306.747 311.167 288.199 343.737 302.397C376.307 316.594 389.614 357.73 373.267 393.702C357.555 429.884 318.871 448.358 286.301 434.161ZM501.603 528.011C469.594 514.058 456.287 472.922 472.049 436.761C487.813 400.597 526.469 382.05 559.039 396.247C591.611 410.445 604.916 451.58 588.572 487.553C572.809 523.714 534.175 542.209 501.603 528.011Z', fill='url(#paint1_radial_1_5)', fill-opacity='0.6')
+                        path(fill-rule='evenodd', clip-rule='evenodd', d='M532.55 633.621C514.506 635.637 496.241 636.361 477.943 635.741C475.935 635.672 473.927 635.588 471.919 635.488C472.03 637.498 472.153 639.506 472.29 641.513C473.828 664.063 477.045 686.388 481.986 708.273C542.723 715.047 608.186 713.48 682.481 696.245C757.658 560.518 774.725 421.867 748.824 281.049C715.378 243.261 676.701 209.533 633.325 181.022C623.055 188.858 610.262 199.842 600.795 208.89C554.195 179.711 504.803 158.181 452.623 144.302C452.81 131.209 451.994 114.292 450.695 101.414C400.232 89.0209 349.125 83.673 298.652 84.9425C158.656 175.116 81.7108 289.018 39.9374 416.16C77.9039 482.267 121.264 531.271 167.516 571.134C186.869 559.837 205.436 547.055 223.025 532.801C224.587 531.535 226.142 530.257 227.688 528.968C226.248 527.565 224.82 526.151 223.404 524.727C210.511 511.755 198.653 497.913 187.88 483.383C186.586 481.636 185.306 479.88 184.043 478.114C186.151 477.634 188.255 477.131 190.351 476.606C194.349 475.605 198.321 474.522 202.247 473.366C287.276 569.408 403.133 619.91 530.093 616.274C531.95 619.947 533.87 623.593 535.843 627.193C536.883 629.09 537.938 630.974 539.007 632.842C536.858 633.12 534.705 633.38 532.55 633.621ZM218.743 528.548C204.226 513.899 191.01 498.166 179.163 481.605L173.913 474.265L182.712 472.263C188.716 470.897 194.687 469.338 200.552 467.611L204.211 466.533L206.739 469.389C290.603 564.115 404.759 613.861 529.922 610.277L533.729 610.168L535.448 613.567C538.238 619.085 541.17 624.54 544.215 629.863L548.665 637.644L539.776 638.793C519.51 641.412 498.939 642.424 478.321 641.756C479.756 662.352 482.61 682.745 486.917 702.771C545.125 708.859 607.752 707.109 678.523 690.998C751.591 557.853 768.312 421.961 743.223 283.778C711.303 247.925 674.607 215.795 633.599 188.401C624.179 195.816 613.244 205.291 604.941 213.227L601.567 216.452L597.611 213.975C551.51 185.109 502.67 163.823 451.081 150.1L446.557 148.897L446.624 144.216C446.787 132.757 446.165 118.237 445.121 106.239C397.091 94.8222 348.505 89.8347 300.485 90.9007C163.558 179.527 87.8994 291.012 46.4783 415.491C82.8645 478.249 124.161 525.297 168.186 563.771C185.766 553.279 202.669 541.535 218.743 528.548ZM283.904 439.661C248.24 424.115 234.445 379.058 251.247 340.513C268.031 302.008 309.874 281.09 346.134 296.896C382.308 312.664 396.191 357.698 378.751 396.137C362 434.653 320.138 455.455 283.904 439.661ZM373.267 393.702C389.614 357.73 376.307 316.594 343.737 302.397C311.167 288.199 272.511 306.747 256.747 342.91C240.984 379.072 254.291 420.207 286.301 434.161C318.871 448.358 357.555 429.884 373.267 393.702ZM499.206 533.511C463.543 517.966 449.748 472.908 466.549 434.363C483.333 395.858 525.177 374.941 561.437 390.746C597.615 406.516 611.494 451.554 594.052 489.995C577.253 528.475 535.449 549.309 499.206 533.511ZM472.049 436.761C456.287 472.922 469.594 514.058 501.603 528.011C534.175 542.209 572.809 523.714 588.572 487.553C604.916 451.58 591.611 410.445 559.039 396.247C526.469 382.05 487.813 400.597 472.049 436.761Z', fill='url(#paint2_linear_1_5)')
+                        defs
+                            radialgradient#paint0_radial_1_5(cx='0', cy='0', r='1', gradientUnits='userSpaceOnUse', gradientTransform='translate(862.582 290.595) rotate(165.984) scale(891.901 647.42)')
+                                stop(stop-color='#7A817A', stop-opacity='0.4' offset="0")
+                                stop(offset='1', stop-color='#070709')
+                            radialgradient#paint1_radial_1_5(cx='0', cy='0', r='1', gradientUnits='userSpaceOnUse', gradientTransform='translate(195.902 583.569) rotate(-15.56) scale(535.532 590.943)')
+                                stop(stop-color='#1B3A1B')
+                                stop(offset='1', stop-color='#1E441E', stop-opacity='0')
+                            lineargradient#paint2_linear_1_5(x1='153.581', y1='147.936', x2='801.527', y2='434.197', gradientUnits='userSpaceOnUse')
+                                stop(offset='0' stop-color='#1AA72A')
+                                    animate(attributeName='stop-color', values='#1AA72A;#91bf02;#1AA72A', dur='8s', repeatCount='indefinite')
+                                stop(offset='0.2' stop-color='#91bf02')
+                                    animate(attributeName='stop-color', values='#91bf02;#69D645;#91bf02', dur='8s', repeatCount='indefinite')
+                                stop(offset='1', stop-color='#69D645')
+                                    animate(attributeName='stop-color', values='#69D645;#1AA72A;#69D645', dur='8s', repeatCount='indefinite')
+    section.section.section--subscribe.js-inview
+        .container.container--third
+            .subscribe-block
+                .subscribe-block__left
+                    .title.title--white.title--second-sec Subscribe to
+                    .title.title--section-big.default-gradient Our Newsletter
+                form.subscribe-form.js-form
+                    input.subscribe-form__input(type="email" placeholder="Your Email")
+                    button.button.button--submit.button--gradient-bg
+                        .button__text Submit
+
+block script

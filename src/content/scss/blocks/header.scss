@@ -1,0 +1,454 @@
+.header {
+	background-color: #0c171e;
+	padding: rem(20) 0;
+	position: relative;
+	z-index: 10;
+
+	.light & {
+		background-color: $color-white;
+
+		.border-gradient {
+			background-color: $color-white;
+			color: $color-dark;
+
+			&:hover {
+				background-color: $color-dark;
+				color: $color-white;
+			}
+		}
+	}
+
+	&__body {
+		display: flex;
+		align-items: center;
+		position: relative;
+		z-index: 1;
+
+		.button-top {
+			margin: 0 rem(30) 0 0;
+
+			@media(max-width: 1330px) {
+				margin: 0;
+
+				~ .button {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+.logo {
+	display: block;
+
+	&--header {
+		width: rem(110);
+		height: rem(28);
+		margin: 0 auto 0 0;
+
+		@media(min-width: 364px) {
+			width: rem(134);
+			height: rem(36);
+		}
+
+		@media(min-width: 768px) {
+			width: rem(170);
+			height: rem(48);
+		}
+
+		@media(min-width: 1281px) {
+			width: rem(214);
+			height: rem(56);
+		}
+	}
+
+	&--footer {
+		width: rem(184);
+		height: rem(55);
+		margin: 0 0 rem(28);
+
+		@media(min-width: 560px) {
+			margin: 0 auto rem(28);
+		}
+
+		@media(min-width: 1200px) {
+			margin: 0 0 rem(28);
+		}
+
+		@media(min-width: 1024px) {
+			width: rem(318);
+			height: rem(68);
+		}
+	}
+
+	img {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.menu {
+	display: flex;
+	align-items: center;
+	margin: 0 rem(33);
+
+	@media(max-width: 1023px) {
+		display: none;
+	}
+
+	> li {
+		position: relative;
+
+		&::after {
+			content: '';
+			position: absolute;
+			min-width: rem(160);
+			top: 100%;
+			height: rem(10);
+			left: 0;
+		}
+
+		+ li {
+			margin: 0 0 0 rem(24);
+
+			@media(min-width: 1024px) {
+				margin: 0 0 0 rem(40);
+			}
+		}
+
+		a {
+			display: flex;
+			align-items: center;
+			font-size: rem(14);
+			color: $color-white;
+			cursor: pointer;
+
+			.light & {
+				color: $color-dark;
+			}
+
+			@media(min-width: 1366px) {
+				font-size: rem(16);
+			}
+
+			svg {
+				width: rem(12);
+				height: rem(8);
+				margin: 0 0 0 rem(8);
+				transition: transform 0.2s linear;
+			}
+
+			&:hover {
+				color: #1aa72a;
+			}
+		}
+
+		&:hover {
+			.submenu {
+				opacity: 1;
+				visibility: visible;
+			}
+
+			> a {
+				color: #1aa72a;
+
+				svg {
+					transform: scaleY(-1);
+				}
+			}
+		}
+	}
+}
+
+.submenu {
+	position: absolute;
+	z-index: 2;
+	top: calc(100% + #{rem(10)});
+	margin: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: #0c171e;
+	padding: rem(14);
+	min-width: rem(160);
+	transition: opacity 0.2s linear;
+	border-radius: rem(12);
+	opacity: 0;
+	visibility: hidden;
+
+	.light & {
+		background: $color-white;
+	}
+
+	li {
+		position: relative;
+		z-index: 2;
+
+		+ li {
+			margin: rem(12) 0 0;
+		}
+
+		a {
+			display: block;
+			color: $color-white;
+			font-weight: 300;
+			font-size: rem(14);
+
+			.light & {
+				color: $color-dark;
+			}
+
+			&:hover {
+				color: #1aa72a;
+			}
+		}
+	}
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		border-radius: rem(12);
+		border: rem(2) solid transparent;
+		background: linear-gradient(125deg,#1AA72A,#69D645) border-box;
+		-webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+		-webkit-mask-composite: destination-out;
+		mask-composite: exclude;
+	}
+}
+
+
+.button-top {
+	position: relative;
+
+	&::after {
+		content: '';
+		position: absolute;
+		min-width: rem(160);
+		top: 100%;
+		height: rem(10);
+		left: 0;
+	}
+
+	&:hover {
+		.submenu {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+}
+
+
+.change-theme {
+	display: flex;
+	align-items: center;
+	margin: 0 0 0 rem(15);
+
+	@media(min-width: 1440px) {
+		margin: 0 0 0 rem(30);
+	}
+
+	&__icon {
+		width: rem(20);
+		height: rem(20);
+		color: $color-white;
+
+		@media(min-width: 561px) {
+			margin: 0 rem(12) 0 0;
+		}
+
+		@media(min-width: 1440px) {
+			width: rem(28);
+			height: rem(28);
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+
+		.light & {
+			color: $color-dark;
+		}
+	}
+
+	&__switcher {
+		width: rem(40);
+		height: rem(20);
+		border-radius: rem(20);
+		background-color: $color-white;
+		position: relative;
+
+		@media(max-width: 560px) {
+			display: none;
+		}
+
+		@media(min-width: 1440px) {
+			width: rem(50);
+			height: rem(28);
+		}
+
+		span {
+			position: absolute;
+			left: 2px;
+			top: 1px;
+			width: rem(18);
+			height: rem(18);
+			border-radius: 100%;
+			background-color: $color-black;
+			transition: background-color 0.2s linear;
+
+			@media(min-width: 1440px) {
+				width: rem(24);
+				height: rem(24);
+				left: 4px;
+				top: 2px;
+			}
+		}
+
+		.light & {
+			background-color: $color-dark;
+
+			span {
+				background-color: $color-white;
+
+				@media(min-width: 1440px) {
+					width: rem(20);
+					height: rem(20);
+					top: 4px;
+				}
+			}
+		}
+
+	}
+
+	&:hover {
+		.change-theme__switcher {
+			span {
+				background-color: #1aa72a;
+			}
+		}
+	}
+}
+
+.mobile-menu {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 110;
+	top: 0;
+	left: 0;
+	background-color: #0c171e;
+	transform: translateX(-100%);
+	transition: transform 0.3s ease;
+	overflow: auto;
+
+	.light & {
+		background-color: $color-white;
+	}
+
+	&.open {
+		transform: translateX(0);
+	}
+
+	&__top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 15px 15px;
+	}
+
+	&__list {
+		padding: 0 rem(20);
+		margin: 0;
+	}
+
+	&__close {
+		width: rem(32);
+		height: rem(32);
+
+		.light & {
+			filter: grayscale(0) invert(1);
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	&__list {
+		margin: 30px 0;
+
+		li {
+			padding: 18px 0 14px;
+			border-bottom: 1px solid #69D645;
+		}
+	}
+
+	&__user {
+		padding: 20px 30px;
+	}
+}
+
+
+.mobile-link {
+	display: block;
+	color: $color-white;
+	font-size: rem(18);
+
+	.light & {
+		color: $color-dark;
+	}
+
+	&__body {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__list {
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.3s ease-in-out, margin 0.1s ease-in-out;
+
+		.active & {
+			margin: 25px 0 0;
+		}
+
+		a {
+			display: block;
+			color: $color-white;
+			font-size: rem(15);
+
+			.light & {
+				color: $color-dark;
+			}
+
+			+ a {
+				margin: 15px 0 0;
+			}
+		}
+	}
+
+	&__arrow {
+		width: rem(12);
+		height: rem(16);
+		transition: transform 0.2s linear;
+
+		.light & {
+			filter: grayscale(0) invert(1);
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+
+		.active & {
+			transform: scaleY(-1);
+		}
+	}
+}
